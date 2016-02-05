@@ -29,8 +29,7 @@ number_to_text = {
     26: "twenty six",
     27: "twenty seven",
     28: "twenty eight",
-    29: "twenty nine",
-
+    29: "twenty nine"
 }
 
 """
@@ -40,20 +39,20 @@ H = int(input().strip())
 M = int(input().strip())
 
 if M == 0:
-    time = number_to_text[H] + " o'clock"
+    time = number_to_text[H] + " o' clock"
 elif M == 15:
     time = "quarter past " + number_to_text[H]
 elif M == 30:
     time = "half past " + number_to_text[H]
 elif M == 45:
-    time = "quarter to " + number_to_text[H]
+    time = "quarter to " + number_to_text[H + 1]
 elif M == 1:
     time = number_to_text[M] + " minute past " + number_to_text[H]
 elif M == 59:
-    time = number_to_text[60 - M] + " minute to " + number_to_text[H]
+    time = number_to_text[60 - M] + " minute to " + number_to_text[H + 1]
 elif M < 30:
     time = number_to_text[M] + " minutes past " + number_to_text[H]
 else:
-    time = number_to_text[60 - M] + " minutes to " + number_to_text[H]
+    time = number_to_text[60 - M] + " minutes to " + number_to_text[H + 1]
 
 print(time)
